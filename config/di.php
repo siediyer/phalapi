@@ -21,7 +21,8 @@ $di = \PhalApi\DI();
 $di->config = new FileConfig(API_ROOT . DIRECTORY_SEPARATOR . 'config');
 
 // 调试模式，$_GET['__debug__']可自行改名
-$di->debug = !empty($_GET['__debug__']) ? true : $di->config->get('sys.debug');
+//$di->debug = !empty($_GET['__debug__']) ? true : $di->config->get('sys.debug');
+$di->debug = false;
 
 // 日记纪录
 $di->logger = FileLogger::create($di->config->get('sys.file_logger'));
@@ -72,3 +73,18 @@ $di->admin = new Portal\Common\Admin();
 // $di->tracer = function() {
 //     return new \App\Common\Tracer();
 // };
+
+$di->qiniu = function() {
+    return new \PhalApi\Qiniu\Lite();
+};
+
+$di->qrcode = function() {
+    return new \PhalApi\QrCode\Lite();
+};
+
+$di->image = function() {
+    return new \PhalApi\Image\Lite(\PhalApi\DI()->config->get('app.Image')['type'],\PhalApi\DI()->config->get('app.Image')['imgname']);
+};
+
+$di->smarty = new \ctbsea\phalapiSmarty\Lite('View',  '<{' , '}>');
+

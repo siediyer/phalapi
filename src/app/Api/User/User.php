@@ -61,6 +61,7 @@ class User extends Api {
     
     /**
      * 登录接口
+     * http://apitest.siediyer.cn/?s=User_User.Login&username=dogstar&password=123456
      * @desc 根据账号和密码进行登录操作
      * @return boolean is_login 是否登录成功
      * @return int user_id 用户ID

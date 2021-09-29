@@ -20,7 +20,16 @@
 		"phalapi/kernal" : "2.*.*",
 		"phalapi/qrcode" : "dev-master",
 		"phalapi/cli" : "dev-master",
-		"phalapi/task" : "dev-master"
+		"phalapi/task" : "dev-master",
+		"phalapi/phpmailer":"dev-master",
+		"phalapi/image":"dev-master",
+		"phalapi/apk": "2.0.*",
+		"ctbsea/phalapi-smarty": "dev-master",
+		"chenall/phalapi-soap": "dev-master",		
+		"vivlong/phalapi-aliyun-oss":"dev-master",
+		"phalapi/qiniu":"dev-master",
+		"jaeger/querylist":"dev-master",
+		"phalapi/redis": "2.0.*"		
 	},
 	"autoload" : {
 		"files" : [
